@@ -2,11 +2,10 @@ const axios = require("axios");
 const express = require("express");
 const app = express();
 app.get("/data", async (req, res) => {
-  const data = await getWeatherInfo();
-  console.log("data -->", data);
+  const data = await getProductData();
   res.status(200).send({ data: data });
 });
-async function getWeatherInfo() {
+async function getProductData() {
   const productData = await axios
     .get("https://dummyjson.com/products")
     .then((res) => {
