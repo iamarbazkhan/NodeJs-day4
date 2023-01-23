@@ -7,12 +7,12 @@ app.get("/data", async (req, res) => {
   res.status(200).send({ data: data });
 });
 async function getWeatherInfo() {
-  const weatherData = await axios
+  const productData = await axios
     .get("https://dummyjson.com/products")
     .then((res) => {
       return res.data;
     })
     .catch((e) => console.log(e));
-  return weatherData;
+  return productData;
 }
 app.listen(9000, console.log("run on port 9000"));
